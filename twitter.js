@@ -339,6 +339,7 @@ Twitter.prototype.uploadMediaChunked = function (params, media_type, accessToken
 		formData = {
 			command: "INIT",
 			media_type: media_type,
+			media_category: 'amplify_video',
 			total_bytes: stats.size
 		};
 		options = {
