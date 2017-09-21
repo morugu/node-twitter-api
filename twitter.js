@@ -1099,4 +1099,11 @@ Twitter.prototype.rateLimitStatus = function(params, accessToken, accessTokenSec
 	});
 };
 
+// media/upload (STATUS) https://dev.twitter.com/rest/reference/get/media/upload-status
+Twitter.prototype.checkUploadStatus = function(params, accessToken, accessTokenSecret, callback) {
+	this.oa.get(uploadBaseUrl + "media/upload.json?" + querystring.stringify(params), accessToken, accessTokenSecret, function(error, data, response) {
+		callback(error, data);
+	});
+}
+
 module.exports = Twitter;
